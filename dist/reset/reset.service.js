@@ -24,6 +24,9 @@ let ResetService = class ResetService {
     async create(reset) {
         return await this.resetRepository.save(reset);
     }
+    async findOne(condition) {
+        return await this.resetRepository.findOne(condition);
+    }
 };
 ResetService = __decorate([
     common_1.Injectable(),

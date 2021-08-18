@@ -13,6 +13,7 @@ const reset_controller_1 = require("./reset.controller");
 const typeorm_1 = require("@nestjs/typeorm");
 const reset_entity_1 = require("./reset.entity");
 const mailer_1 = require("@nestjs-modules/mailer");
+const auth_module_1 = require("../auth/auth.module");
 let ResetModule = class ResetModule {
 };
 ResetModule = __decorate([
@@ -27,7 +28,8 @@ ResetModule = __decorate([
                 defaults: {
                     from: 'no-reply@localhost.com'
                 }
-            })
+            }),
+            auth_module_1.AuthModule
         ],
         providers: [reset_service_1.ResetService],
         controllers: [reset_controller_1.ResetController]

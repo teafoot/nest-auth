@@ -4,6 +4,7 @@ import { ResetController } from './reset.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ResetEntity } from './reset.entity';
 import { MailerModule } from '@nestjs-modules/mailer';
+import { AuthModule } from 'src/auth/auth.module';
 
 @Module({
   imports: [
@@ -11,12 +12,13 @@ import { MailerModule } from '@nestjs-modules/mailer';
     MailerModule.forRoot({
       transport: {
         host: 'localhost',
-        port: 1025
+        port: 1025 // mailhog
       },
       defaults: {
         from: 'no-reply@localhost.com'
       }
-    })
+    }),
+    AuthModule
   ],
   providers: [ResetService],
   controllers: [ResetController]

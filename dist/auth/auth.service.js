@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AuthService = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
+const reset_interface_1 = require("../reset/models/reset.interface");
 const typeorm_2 = require("typeorm");
 const user_entity_1 = require("./models/user.entity");
 let AuthService = class AuthService {
@@ -26,6 +27,9 @@ let AuthService = class AuthService {
     }
     async findOneBy(condition) {
         return await this.userRepository.findOne(condition);
+    }
+    async update(id, data) {
+        return await this.userRepository.update(id, data);
     }
 };
 AuthService = __decorate([
