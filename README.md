@@ -1,3 +1,4 @@
+```plaintext
 Commands used and notes (if available) for the course 
 The Complete Angular & NestJS Course
 https://www.udemy.com/course/the-complete-angular-nestjs-course/
@@ -30,3 +31,4 @@ npm i -D @types/cookie-parser
 
 npm i @nestjs-modules/mailer nodemailer
 npm i -D @types/nodemailer
+```
